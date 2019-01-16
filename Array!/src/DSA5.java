@@ -9,29 +9,36 @@ public class DSA5 {
 		// TODO Auto-generated method stub
 
 		// arrays (English and Spanish words)
-				String[] wordEnglish = {"robin","treat","trick","search","circle","whole","five", "pizza","cheese","spaghetti","monkey","horse","dog","cat","juice"};
-				String[] wordSpanish = {"robin", "traiter", "tour", "chercher", "cercle", "entier", "cinq", "pizza", "fromage", "spaghetti","singe", "cheval", "chien", "chat", "jus"};
+				String[] wordEnglish = {"apple", "bird", "cake", "dog", "elephant", "falcon", "gouda", "hell", "I", "joke", "kale", "land", "mother", "normal", "orphan", "pancake", "question", "request", "station", "tacos", "underline", "vacation", "when", "xylophone", "young", "zealous"};
+				String[] wordSpanish = {"manzana", "pájaro", "pastel", "perro", "elefante", "halcón", "Gouda", "infierno", "yo", "broma","col rizada", "tierra", "madre", "normal", "\r\n" + 
+						"huérfano", "crepe", "pregunta", "solicitud", "estación", "tacos", "subrayar", "\r\n" + 
+								"vacaciones", "cuando", "xilófono", "joven", "celoso" };
 				
-				//convert to arraylist for easier use
+				// converts to arraylist 
 				ArrayList<String> wordEng = new ArrayList<String>(Arrays.asList(wordEnglish));
 				ArrayList<String> wordSpan = new ArrayList<String>(Arrays.asList(wordSpanish));
 				
-				// introduce them to translator and set flag to make program loop
 				boolean flag = true;
-				System.out.println("Welcome to the english french translator");
+				
+				// introduce user to translator 
+				System.out.println("Hi there! Welcome to our English-Spanish translator!");
 				
 				while(flag = true) 
+					
 				{
-					System.out.println("\nwhat would you like to do next, select number..."
-							+ "\n1. Translate something "
-							+ "\n2. Quit "
+					// asks the user what they want to do, prompts them if they want to translate or quit
+					System.out.println("\nWhat are you up to doing? Choose..."
+							+ "\n1. Translate something from English to Spanish "
+							+ "\n2. Quit translator "
 						  );
-
+					
+					// will be used to scan 	
 					Scanner scanNums = new Scanner(System.in);
-					// store choice for later
+					
+					// stores choice and scans
 					int choice = scanNums.nextInt();
 					
-					// check if they want to exit the loop or not 
+					// check if user wants to continue translating or quit 
 					if(choice == 1) {
 						// continue loop
 						flag = true;
@@ -39,30 +46,31 @@ public class DSA5 {
 					else if (choice == 2)
 					{
 						// end loop and program
-						System.out.println("Bye!");
+						System.out.println("See you soon! Hasta pronto! ");
 						flag = false;
 						return;
 					}
 					
 
-					// iterate through and print each word in english and french
-					System.out.println("Here are your words...");
-					System.out.println("English: 	French:");
-					for(int i = 0; i < wordEnglish.length; i ++)
+					// prints words to translate
+					System.out.println("Here are your options of words to translate...");
+					System.out.println("English: ");
+					for(int i = 0; i < wordEnglish.length; i++)
 					{
 						//print list of options
-						System.out.printf("%-1s: %-10s %-15s \n",i + 1, wordEng.get(i), wordSpan.get(i));
+						System.out.printf("%-1s: %-10s  \n",i + 1, wordEng.get(i));
 					}
 					
 					// prompt user for input
-					System.out.println("\nwhat do you want translated? please input the number below");
+					System.out.println("\nWhat word do you want translated?  Type the number.");
 					
-					// store that input
+					// store the number
 					choice = scanNums.nextInt();
 					
-					//print translation 
-					System.out.println("You selected " + wordEng.get(choice - 1));
-					System.out.println("its french translation is " + wordSpan.get(choice - 1));
+					// print translation 
+					System.out.println(" ");
+					System.out.println("You chose" + " '" + wordEng.get(choice - 1) + "'.");
+					System.out.println("The Espanol translation is" + " '" + wordSpan.get(choice - 1) + "'.");
 					
 				}
 				
